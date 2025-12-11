@@ -62,7 +62,6 @@ class DomainDiscriminator(nn.Module):
 
     def forward(self, x):
 
-        original_shape = x.shape
         if len(x.shape) == 3:
             # (batch_size, seq_len, feature_dim) -> (batch_size * seq_len, feature_dim)
             batch_size, seq_len, feature_dim = x.shape
@@ -107,7 +106,6 @@ class SimpleDomainDiscriminator(nn.Module):
 
     def forward(self, x):
 
-        original_shape = x.shape
         if len(x.shape) == 3:
             batch_size, seq_len, feature_dim = x.shape
             x = x.reshape(-1, feature_dim)

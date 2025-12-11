@@ -262,7 +262,7 @@ def evaluate(model, data_loader, criterion, device, domain_id=None):
     try:
         auroc = roc_auc_score(all_labels, all_preds)
         auprc = average_precision_score(all_labels, all_preds)
-    except:
+    except Exception:
         auroc = 0.0
         auprc = 0.0
 
