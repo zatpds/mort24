@@ -239,7 +239,7 @@ def load_model(model, source_dir, pl_model=True) -> DLModel:
                 checkpoint = torch.load(model_path)
                 model.load_from_checkpoint(checkpoint)
         else:
-            raise Exception(f"ML models are not supported. Only DL models with backprop are supported.")
+            raise Exception("ML models are not supported. Only DL models with backprop are supported.")
     else:
         raise Exception(f"No weights to load at path : {source_dir}")
     logging.info(f"Loaded {type(model)} model from {model_path}")

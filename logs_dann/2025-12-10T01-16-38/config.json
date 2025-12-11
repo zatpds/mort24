@@ -1,0 +1,15 @@
+{
+  "source": "demo_data/mortality24/eicu_demo",
+  "target": "demo_data/mortality24/mimic_demo",
+  "log_dir": "logs_dann_standalone",
+  "epochs": 100,
+  "batch_size": 32,
+  "lr": 0.0001,
+  "hidden": 128,
+  "heads": 4,
+  "depth": 2,
+  "domain_loss_weight": 1.0,
+  "seed": 2222,
+  "cpu": false,
+  "verbose": false
+}

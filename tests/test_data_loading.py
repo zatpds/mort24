@@ -74,7 +74,7 @@ def test_data_loading():
                 if "label" in df.columns:
                     print(f"    Label column dtype: {df['label'].dtype}")
                     label_counts = df["label"].value_counts().sort("label")
-                    print(f"    Label distribution:")
+                    print("    Label distribution:")
                     for row in label_counts.iter_rows(named=True):
                         print(f"      Label {row['label']}: {row['count']} ({row['count']/len(df)*100:.2f}%)")
                 
@@ -84,7 +84,7 @@ def test_data_loading():
                 traceback.print_exc()
         
         # Test joining dynamic and static data (common operation)
-        print(f"\n  Testing data joins:")
+        print("\n  Testing data joins:")
         try:
             dyn_path = data_dir / "dyn.parquet"
             sta_path = data_dir / files_to_test["static"]
@@ -96,11 +96,11 @@ def test_data_loading():
                 if "stay_id" in dyn_df.columns and "stay_id" in sta_df.columns:
                     # Try a simple join
                     joined = dyn_df.join(sta_df, on="stay_id", how="left")
-                    print(f"    Dynamic + Static join: [OK] Success")
+                    print("    Dynamic + Static join: [OK] Success")
                     print(f"      Joined shape: {joined.shape}")
                     print(f"      Original dynamic shape: {dyn_df.shape}")
                 else:
-                    print(f"    Join test skipped: missing stay_id column")
+                    print("    Join test skipped: missing stay_id column")
         except Exception as e:
             print(f"    Join test: [ERROR] Error: {e}")
 

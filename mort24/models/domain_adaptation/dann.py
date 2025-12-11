@@ -7,9 +7,8 @@ Reference:
 
 import gin
 import logging
-import torch
 import torch.nn as nn
-from typing import Tuple, Optional
+from typing import Optional
 
 from mort24.constants import RunMode
 from mort24.models.dl_models.layers import PositionalEncoding, TransformerBlock

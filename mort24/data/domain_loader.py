@@ -5,10 +5,9 @@ This module provides dataset classes that handle data from multiple domains
 """
 
 import logging
-from typing import List, Optional, Union, Tuple
+from typing import List, Tuple
 import gin
 import numpy as np
-import polars as pl
 from torch import Tensor, from_numpy
 from torch.utils.data import Dataset
 
