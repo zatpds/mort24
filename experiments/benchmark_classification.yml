@@ -1,0 +1,32 @@
+command:
+  - ${env}
+  - ${program}
+  - train
+  - -d
+  - ../data/
+  - -t
+  - BinaryClassification
+  - --log-dir
+  - ../yaib_logs
+  - --tune
+  - --wandb-sweep
+  - -gc
+  - -lc
+method: grid
+name: yaib_classification_benchmark
+parameters:
+  data_dir:
+    values:
+      - ../data/mortality24/miiv
+      - ../data/mortality24/eicu
+
+  model:
+    values:
+      - Transformer
+  seed:
+    values:
+      - 2222
+  use_pretrained_imputation:
+    values:
+      - None
+program: icu-benchmarks
